@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: playground
+build:
+  artifacts:
+    - image: n26/scaffold-playground
+      context: .
+      jib: {}
+  tagPolicy:
+    gitCommit: { }
+deploy:
+  kubectl:
+    manifests:
+    - manifests/*.yaml

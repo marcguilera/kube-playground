@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: playground
+  cloud:
+    kubernetes:
+      enabled: true
+      reload:
+        enabled: true
+        mode: event
+      config:
+        enabled: true
+        sources:
+          - name: playground-cm
+
+management:
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    restart:
+      enabled: true
